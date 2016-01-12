@@ -10,6 +10,13 @@ SMART_BYTES_URL = 'http://www.airtel.in/forme/home/smartbytes'
 def access_smartbytes_page(browser, display):
     """
     Visit Airtel smart bytes
+
+    Args:
+        browser: diver obj
+        display: display object; which will hide the browser
+
+    Returns:
+        None
     """
     browser.get(SMART_BYTES_URL)
     try:
@@ -27,6 +34,16 @@ def access_smartbytes_page(browser, display):
 
 
 def init_driver():
+    """
+    Initialize browser driver
+
+    Args:
+        None
+
+    Returns:
+        browser: diver obj
+        display: display object; which will hide the browser
+    """
     # Used to hide browser
     display = Display(visible=0, size=(1080, 1200))
     display.start()
@@ -38,6 +55,11 @@ def init_driver():
 def destroy(browser, display):
     """
     Stop browser and display which is running in the backgroud
+    Args:
+        browser: diver obj
+        display: display object; which will hide the browser
+    Returns:
+        None
     """
     browser.quit()
     display.stop()
